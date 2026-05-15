@@ -1,61 +1,23 @@
 # How to `git` for complete beginners
 
-## Overview
+Start here if don't know how to use `git` to make your life better.  This guide doesn't presume that you are a coder or engineer.
 
-### What is `git`
+It is divided into 4 sections; feel free to or start at the section that best meets your needs or skip around as necessary.
 
-### Why to `git`
+- [Overview](overview.md):
 
-### Glossary
+  If you've never heard of `git`, or don't know what it is or why you should care, this section gives a birds-eye view of what `git` can do for you.
 
-## Setup
+  Of particular note is the [glossary of terms](overview.md#glossary) used when talking `git`.
 
-### The command line
+- [Setup](setup.md):
 
-### Installing `git`
+  This section provides details on how to get `git` up and running on your computer.
 
-### Configuring `git`
+- [Do it](git.md)
 
-## Doing it
+  Learn by doing a quick tutorial project that steps you through the most relevant `git` commands.
 
-### Main workflow
+- [Advanced usage](advanced.md)
 
-#### Getting started from scratch: `git init`
-
-#### Building off something existing: `git clone`
-
-#### Making progress according to plan: `git add` / `git commit`
-
-#### Helping future you: `git tag`
-
-### Fancy undo
-
-#### Seeing what you just did: `git diff`
-
-#### Fixing a current mistake: `git restore`
-
-#### Seeing what you've done in the past: `git log` / `git show`
-
-#### Fixing a past mistake: `git revert`
-
-#### Fixing lots of mistakes: `git reset`
-
-### Trying things in parallel
-
-#### Creating a new option: `git branch`
-
-#### Going between options: `git switch`
-
-#### Bringing things together: `git merge`
-
-### Using the cloud
-
-#### Single-player backup: `git push`
-
-#### Multiple devices: `git pull`
-
-#### If things went parallel: `git fetch`
-
-#### Being polite: merge / pull requests
-
-#### Communication: issues
+  Explore some additional `git` functionality for more power and flexibility.
