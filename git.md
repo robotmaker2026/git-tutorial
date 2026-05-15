@@ -16,44 +16,46 @@
 
 ### Configuring `git`
 
-## Doing it: the `git` workflow
+## Doing it
 
-### Getting started from scratch: `git init`
+### Main workflow
 
-### Building off something existing: `git clone`
+#### Getting started from scratch: `git init`
 
-### Making progress according to plan: `git add` / `git commit`
+#### Building off something existing: `git clone`
 
-### Helping future you: `git tag`
+#### Making progress according to plan: `git add` / `git commit`
 
-## The fancy undo
+#### Helping future you: `git tag`
 
-### Seeing what you just did: `git diff`
+### Fancy undo
 
-### Fixing a current mistake: `git restore`
+#### Seeing what you just did: `git diff`
 
-### Seeing what you've done in the past: `git log` / `git show`
+#### Fixing a current mistake: `git restore`
 
-### Fixing a past mistake: `git revert`
+#### Seeing what you've done in the past: `git log` / `git show`
 
-### Fixing lots of mistakes: `git reset`
+#### Fixing a past mistake: `git revert`
 
-## Trying things in parallel
+#### Fixing lots of mistakes: `git reset`
 
-### Creating a new option: `git branch`
+### Trying things in parallel
 
-### Going between options: `git switch`
+#### Creating a new option: `git branch`
 
-### Bringing things together: `git merge`
+#### Going between options: `git switch`
 
-## Using the cloud
+#### Bringing things together: `git merge`
 
-### Single-player backup: `git push`
+### Using the cloud
 
-### Multiple devices: `git pull`
+#### Single-player backup: `git push`
 
-### If things went parallel: `git fetch`
+#### Multiple devices: `git pull`
 
-### Being polite: merge / pull requests
+#### If things went parallel: `git fetch`
 
-### Communication: issues
+#### Being polite: merge / pull requests
+
+#### Communication: issues
