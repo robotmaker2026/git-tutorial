@@ -242,11 +242,44 @@ Sometimes later commits edit the content in an earlier commit, in which case it'
   $ git revert --continue --no-edit
   ```
 
-#### Fixing lots of mistakes: `git reset`
+#### Bulk undo: `git reset`
 
-### Using the cloud part 1:
+Things started to go wrong when you started deleting content to go from favorite foods to recipe ideas.  Let's just go back to the way things were.  Luckily, you tagged that state back then, which makes things easier now:
 
-#### Building off something existing: `git clone`
+```
+$ git reset favorites
+```
+
+This tells git that the latest commit you want to keep is the one you'd tagged with the name "favorites".  It doesn't actually change any of the file contents, so a `git status` will show that the file has changes, and `git diff` will show you what those changes are.  If you really want to undo all those changes and return to the state of the repo at the tagged commit, you already know how to get rid of the un-committed changes:
+
+```
+$ git restore ideas.md
+```
+
+Note: You can `git reset` and `git restore` in a single command: `git reset --hard`.
+
+### A cloud interlude
+
+#### Single-player backup: `git push`
+
+Since you initially cloned this repository from your github account to your local drive, it might be nice to save your new commits back on your github account.
+
+- Send your new commits to github:
+  ```
+  $ git push
+  ```
+
+You should be able to see all your new changes on your repo page on github.com.
+
+#### Multiple devices: `git pull`
+
+You can use git to synchronize between multiple clones of the same repository.  If you've cloned the same repo on two different devices (or maybe two separate directories on the same device), then added and pushed commits from one copy, you can fast forward your other copy by getting and applying all the newer commits since you cloned:
+
+```
+$ git pull
+```
+
+Note: this assumes that you only pulled, added, committed, and pushed on one clone at a time.  Otherwise, you're entering the realm of parallel changes, which we'll look at in the next section.
 
 ### Trying things in parallel
 
@@ -256,15 +289,7 @@ Sometimes later commits edit the content in an earlier commit, in which case it'
 
 #### Bringing things together: `git merge`
 
-### Using the cloud
-
-#### Single-player backup: `git push`
-
-#### Multiple devices: `git pull`
-
-#### If things went parallel: `git fetch`
-
-#### Clone in the cloud: fork
+### More cloud things
 
 #### Being polite: merge / pull requests
 
