@@ -150,7 +150,7 @@ After all that effort to list all your favorite foods, you just deleted a bunch 
 
 Hooray, disaster has been averted!
 
-#### Seeing what you've done in the past: `git log` / `git show`
+#### Seeing what you've done in the past: `git log`
 
 - How did we get to our current state?  We can see every commit that we've made in this branch:
   ```
@@ -161,16 +161,55 @@ Hooray, disaster has been averted!
   $ git log --graph --abbrev-commit --branches --pretty=oneline
   ```
 
-#### Fixing a past mistake: `git revert`
+#### Fixing a past mistake: `git show` / `git revert`
 
 We deleted stuff in the past too, when we deleted the entire "drinks" section.  Let's bring that back too.
 
-- Use `git log` to identify the commit where we deleted that section, and note its hash: the long sequence of hexadecimal digits after the word "commit" in the full log, or the first 7 digits of that sequence at the start of the oneline text.
-- Undo that specific change:
+- Use `git log` to identify the commit where we deleted that section (good thing we used descriptive commit messages!), and note its hash: the long sequence of hexadecimal digits after the word "commit" in the full log, or the first 7 digits of that sequence at the start of the oneline text.
+
+- (optional) Look at that specific change to verify that it is what you want to undo:
   ```
-  $ git revert <hash>
+  $ git show <hash>
   ```
     - Replace `<hash>` with either the full or the short hash (don't include the angle brackets `<>`, those are just to indicate the placeholder in the above command).
+
+- Undo that specific change:
+  ```
+  $ git revert --no-edit <hash>
+  ```
+    - Git will create a new commit with an auto-generated message.
+    - If you leave out `--no-edit`, git will prompt you to edit the commit message in a text editor.
+
+Even though there were other changes made afterwards, that specific change nevertheless got undone.  In this case, the revert could be cleanly applied as a new commit; you can use `git log` / `git show` to see what has happened.
+
+#### Handling a conflict: `git merge`
+
+Sometimes later commits edit the content in an earlier commit, in which case it's not clear how to undo the earlier commit.  `git` doesn't try to answer that question for you, instead forcing you to figure it out.
+
+- Change the title to "My favorite foods".  Save, add, commit.
+
+- Decide instead to delete the title altogether.  Save, add, commit.
+
+- Try to revert the change to the title (that no longer exists).  Find the commit hash with `git log` then undo it with `git revert`.
+
+    - You asked `git` to undo a change on text that no longer exists; `git` doesn't know what you intend, so it shows an error.
+    - `git` will provide two options for what you might mean: the status of that section of text before the first commit that you're trying to revert, and the status of that section of test after the last commit that edited that section, but leave it to you to identify what you actually want
+
+- Open the file in the text editor to handle the conflict.  Find the conflicted section and the two options:
+    - between "<<<<<< HEAD" and "======" is the latest state of that text section
+    - between "======" and ">>>>>> parent of <hash> (<message>)" is the state of that text section before the commit you're trying to revert
+
+- Edit the text section to what you actually want: choose one of the two options, or replace the entire section with something else entirely.  In the end, ensure that you've deleted the "<<<<<<", "======", ">>>>>>" lines.
+
+- Indicate that you've changed the file:
+  ```
+  $ git add ideas.md
+  ```
+
+- Complete the revert:
+  ```
+  $ git revert --continue --no-edit
+  ```
 
 #### Fixing lots of mistakes: `git reset`
 
