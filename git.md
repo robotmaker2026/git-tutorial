@@ -2,7 +2,7 @@
 
 Learn `git` by using many of its tools in an example project: submitting a recipe to our recipe book.
 
-We will be using the terminal / command prompt for all of our `git` actions (as described in [setup](setup.md)).  Commands that you should enter into the terminal will be represented in code blocks like so:
+You will be using the terminal / command prompt for all of the `git` actions (as described in [setup](setup.md)).  Commands that you should enter into the terminal will be represented in code blocks like so:
 
 ```
 $ pwd
@@ -45,7 +45,7 @@ Hooray, you now have your own repo pre-populated with some files (and their hist
 
 Note 1: The root of the new repo is now in the `my-recipe` subfolder of `RobotMaker2026`, though you can specify the root folder during the clone.  For the sake of the rest of this tutorial, delete or rename the folder you just made here, perhaps to `original-recipe`.
 
-Note 2: we could also have chosen any existing git repo to clone, even the local repository we created in the previous step.  Typically we will clone repos from online links though.
+Note 2: You could also have chosen any existing git repo to clone, even the local repository created in the previous step.  Typically you will clone repos from online links though.
 
 #### Adding some cloud: forking
 
@@ -59,7 +59,7 @@ If you want to be able to use the online github services for yourself, instead o
 
 ### Main workflow
 
-Regardless of how we created our `git` repo, the typical workflow from that point on is the same, and is all done offline and purely locally.
+Regardless of how you created your `git` repo, the typical workflow from that point on is the same, and is all handled offline and purely locally.
 
 #### New content: `git add` / `git commit`
 
@@ -146,13 +146,13 @@ Once you're happy with a list of your favorite foods, move on to the next step.
 
 Commit messages tell us what has **changed since the last commit**.  Sometimes it may be helpful to know the **overall, cumulative state** of the repo.
 
-- Let's leave a note to summarize where we have gotten so far:
+- Let's leave a note to summarize where you have gotten so far:
   ```
   git tag -a favorites -m "The full list of my favorite foods, classified by type"
   ```
     - `-a` is telling git to **add** a tag
     - The single word after `-a` is the tag **name**: a short identifier for us to refer to later
-    - The **message** after `-m` is the note we're leaving to ourselves
+    - The **message** after `-m` is the note you're leaving to yourself
 
 ### Fancy undo
 
@@ -176,7 +176,7 @@ After all that effort to list all your favorite foods, you just deleted a bunch 
 
 #### Fixing a current mistake: `git restore`
 
-- Let's actually undo those changes, taking our file back to what it looked like at the end of our last commit:
+- Let's actually undo those changes, taking your file back to what it looked like at the end of your last commit:
   ```
   $ git restore ideas.md
   ```
@@ -185,7 +185,7 @@ Hooray, disaster has been averted!
 
 #### Seeing what you've done in the past: `git log`
 
-- How did we get to our current state?  We can see every commit that we've made in this branch:
+- How did you get to your current state?  You can see every commit that you've made in this branch:
   ```
   $ git log
   ```
@@ -196,9 +196,9 @@ Hooray, disaster has been averted!
 
 #### Fixing a past mistake: `git show` / `git revert`
 
-We deleted stuff in the past too, when we deleted the entire "drinks" section.  Let's bring that back too.
+You deleted stuff in the past too, when you deleted the entire "drinks" section.  Let's bring that back too.
 
-- Use `git log` to identify the commit where we deleted that section (good thing we used descriptive commit messages!), and note its hash: the long sequence of hexadecimal digits after the word "commit" in the full log, or the first 7 digits of that sequence at the start of the oneline text.
+- Use `git log` to identify the commit where you deleted that section (good thing you used descriptive commit messages!), and note its hash: the long sequence of hexadecimal digits after the word "commit" in the full log, or the first 7 digits of that sequence at the start of the oneline text.
 
 - (optional) Look at that specific change to verify that it is what you want to undo:
   ```
