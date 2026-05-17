@@ -14,13 +14,13 @@ With that, let's get started.
 
 However you usually do it on your computer, create a folder to hold all the different repos you'll create in this course (perhaps named `RobotMaker2026`).
 
-### Main workflow
+### Getting started
 
 #### Getting started from scratch: `git init`
 
-- Under the `RobotMaker2026` folder, create a new folder named `recipe-ideas`.  This new folder will be the root of your first repo.
+- Under the `RobotMaker2026` folder, create a new folder named `test-recipe`.  This folder will be the root of your new repo.
 
-- Navigate to `RobotMaker2026/recipe-ideas` in a command prompt.
+- Navigate to `RobotMaker2026/test-recipe` in a command prompt.
 
 - **Initialize** a new, blank repo in that directory:
   ```
@@ -29,17 +29,48 @@ However you usually do it on your computer, create a folder to hold all the diff
 
 Congratulations, you have now created a new (blank) repo!  This repo will exist only on your computer, and give you access to all of the benefits of `git` (see the [overview](overview.md) if you need a refresher) in a fully offline way.
 
-We'll start adding content in the next section.
+We'll handle content in the next section, but first let's look at other ways of getting started.
 
-#### Your first content: `git add` / `git commit`
+#### Building off of another repo: `git clone`
 
-- Use whatever text editing software you like to create a new plain text file in the `recipe-ideas` folder named `ideas.md`.
+It turns out we've already created an outline for a recipe.  Rather than starting from nothing, you can build on our repo that lives at <>.
+
+- In the terminal, navigate back to the **parent directory** where you want this repo, i.e. `RobotMaker2026`
+- **Clone** the existing repo to make a brand new one with the exact same history:
+  ```
+  $ git clone
+  ```
+
+Hooray, you now have your own repo pre-populated with some files (and their history of commits).  Don't worry about the original owner anymore, it's all yours now.  You do not need any cloud service account to clone, and from this point on it lives offline, entirely on your own computer, as if you had done everything from the `git init` onwards yourself.
+
+Note 1: The root of the new repo is now in the `my-recipe` subfolder of `RobotMaker2026`, though you can specify the root folder during the clone.  For the sake of the rest of this tutorial, delete or rename the folder you just made here, perhaps to `original-recipe`.
+
+Note 2: we could also have chosen any existing git repo to clone, even the local repository we created in the previous step.  Typically we will clone repos from online links though.
+
+#### Adding some cloud: forking
+
+If you want to be able to use the online github services for yourself, instead of cloning directly from the original repo to your hard drive, **fork** the original repo into your github account.
+
+- After logging in to your github account on the website, navigate in your browser to <>
+
+- Click on the button in the top right of the screen labeled "Fork".  (It will also have an icon and a number counting the current forks.)
+
+- After forking, you should be taken to an identical repository, only this time under your account instead of ours.  You can clone this to your local drive instead.  Copy the URL from the big green button labeled "<> Code" and then repeat the previous section but with that new URL instead of ours.
+
+### Main workflow
+
+Regardless of how we created our `git` repo, the typical workflow from that point on is the same, and is all done offline and purely locally.
+
+#### New content: `git add` / `git commit`
+
+- Use whatever text editing software you like to create a new plain text file in the `my
+recipe` folder named `ideas.md`.
     - **Do not** create a Word document, rich text format, pdf, or any other kind of file---ensure you save the file as "plain text".
     - The `.md` extension denotes a markdown file, which gives you intuitive formatting while still staying readable in plain text.
 
 - For now, the text content of the file can be just a simple heading (including the pound sign `#` at the start of the line to indicate the top-level heading):
   ```
-  # Ideas for the recipe book
+  # Ideas for my recipe
   ```
 
 - Save the file and exit your text editor.
@@ -99,6 +130,8 @@ Your repo is now doing something for you!  It is tracking a file, which so far h
   Note the two hashes `##` indicating a section heading.  Subsections can be indicated by three hashes `###`, and so on for further subdivisions, etc.  More options for markdown formatting can be found at e.g. <https://markdowncheatsheet.net/>.
 
 - Create a new commit by adding the file then committing **with a helpful message**.
+
+- Re-open the file, and edit the title to be more appropriate, i.e. "My favorite foods".  Save the file, but feel free to leave the text editor running.  In the terminal, add the file then commit with a helpful message.
 
 - Make a few additional changes to content, formatting, or anything else for this list, adding and committing anytime you have completed a meaningful change to the content.  As always, use your commit messages to briefly summarize the change from the previous commit.
 
@@ -186,14 +219,12 @@ Even though there were other changes made afterwards, that specific change never
 
 Sometimes later commits edit the content in an earlier commit, in which case it's not clear how to undo the earlier commit.  `git` doesn't try to answer that question for you, instead forcing you to figure it out.
 
-- Change the title to "My favorite foods".  Save, add, commit.
-
 - Decide instead to delete the title altogether.  Save, add, commit.
 
-- Try to revert the change to the title (that no longer exists).  Find the commit hash with `git log` then undo it with `git revert`.
+- Try to revert the change to the title that you made way long ago.  Find the commit hash with `git log`, verify with `git show`, then undo it with `git revert`.
 
     - You asked `git` to undo a change on text that no longer exists; `git` doesn't know what you intend, so it shows an error.
-    - `git` will provide two options for what you might mean: the status of that section of text before the first commit that you're trying to revert, and the status of that section of test after the last commit that edited that section, but leave it to you to identify what you actually want
+    - `git` will provide two options for what you might mean: the status of that section of text before the first commit that you're trying to revert, and the status of that section of test after the last commit that edited that section.  However, it will be up to you to identify what you actually want.
 
 - Open the file in the text editor to handle the conflict.  Find the conflicted section and the two options:
     - between "<<<<<< HEAD" and "======" is the latest state of that text section
@@ -216,20 +247,6 @@ Sometimes later commits edit the content in an earlier commit, in which case it'
 ### Using the cloud part 1:
 
 #### Building off something existing: `git clone`
-
-Sometimes you don't want to start from a new blank repo, but make changes on an existing repo.  In this case we'll build on the repo that lives at <>.
-
-- In the terminal, navigate to the **parent directory** where you want this repo, i.e. `RobotMaker2026`
-- **Clone** an existing repo to make a brand new one with the exact same history:
-  ```
-  $ git clone
-  ```
-
-Hooray, you now have your own repo pre-populated with some files (and their history of commits).  Don't worry about the original owner anymore, it's all yours now.
-
-Note 1: the root of the new repo is now in the `` subfolder of `RobotMaker2026`.
-
-Note 2: we could also have chosen any existing git repo to clone, even the one we created in the previous step.  Typically we will clone repos from online links though.
 
 ### Trying things in parallel
 
