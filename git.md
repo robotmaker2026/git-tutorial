@@ -81,7 +81,7 @@ Your repo is now doing something for you!  It is tracking a file, which so far h
   $ git add ideas.md
   ```
 
-- Create a commit with a helpful message indicating what has changed:
+- Create a commit with a brief helpful message indicating what has changed:
   ```
   $ git commit -m "Started making a list of my favorite foods"
   ```
@@ -98,9 +98,9 @@ Your repo is now doing something for you!  It is tracking a file, which so far h
   ```
   Note the two hashes `##` indicating a section heading.  Subsections can be indicated by three hashes `###`, and so on for further subdivisions, etc.  More options for markdown formatting can be found at e.g. <https://markdowncheatsheet.net/>.
 
-- Create a new commit by adding the file then committing with a helpful message.
+- Create a new commit by adding the file then committing **with a helpful message**.
 
-- Feel free to make additional changes to content, formatting, or anything else for this list, adding and committing anytime you have completed a meaningful change to the content.
+- Make a few additional changes to content, formatting, or anything else for this list, adding and committing anytime you have completed a meaningful change to the content.  As always, use your commit messages to briefly summarize the change from the previous commit.
 
 You now have a branch with multiple commits in your repo!  In case you missed it earlier, you can see the branch name from:
 ```
@@ -111,9 +111,9 @@ Once you're happy with a list of your favorite foods, move on to the next step.
 
 #### Helping future you: `git tag`
 
-Commit messages tell us what has changed since the last commit.  Sometimes it may be helpful to know the overall, cumulative state of the repo.
+Commit messages tell us what has **changed since the last commit**.  Sometimes it may be helpful to know the **overall, cumulative state** of the repo.
 
-- Let's leave a note to capture where we are so far:
+- Let's leave a note to summarize where we have gotten so far:
   ```
   git tag -a favorites -m "The full list of my favorite foods, classified by type"
   ```
@@ -126,8 +126,8 @@ Commit messages tell us what has changed since the last commit.  Sometimes it ma
 To show off the value of `git` when it comes to undoing mistakes, let's create some more edits.
 
 - Decide that "drinks" (or some other category that you have) shouldn't count as a favorite food:  Open `ideas.md` in a text editor, delete that entire section, save and close, add, commit.
-- Decide that you don't have enough options, so open `ideas.md` and add some more items / categories to your list.  Save and close, add, commit.
-- Decide that you should only list the foods you know how to make, so delete everything you don't.  Save and close, but don't add or commit just yet.
+- Decide that you don't have enough options, so open `ideas.md` and add some more items to your list in the other categories you do have.  Save and close, add, commit.
+- Decide that you should only list the foods you know how to make, so delete everything you don't.  Save and close, but **don't add or commit just yet**.
 
 #### Seeing what has changed: `git diff`
 
@@ -138,7 +138,7 @@ After all that effort to list all your favorite foods, you just deleted a bunch 
   ```
   $ git diff
   ```
-    - Note that by default you only see the difference between the last commit (i.e. HEAD) and the current working state, so if you've added and committed, the diff will be blank.
+    - Note that by default you only see the difference between the last commit (i.e. HEAD) and the current working state, so after you've added and committed, the diff will be blank.
     - There are many more things you can do with `git diff` which we will save for advanced `git`.
 
 #### Fixing a current mistake: `git restore`
