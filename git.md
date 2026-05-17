@@ -148,7 +148,7 @@ Commit messages tell us what has **changed since the last commit**.  Sometimes i
 
 - Let's leave a note to summarize where you have gotten so far:
   ```
-  git tag -a favorites -m "The full list of my favorite foods, classified by type"
+  $ git tag -a favorites -m "The full list of my favorite foods, classified by type"
   ```
     - `-a` is telling git to **add** a tag
     - The single word after `-a` is the tag **name**: a short identifier for us to refer to later
