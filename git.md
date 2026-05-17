@@ -150,7 +150,7 @@ Commit messages tell us what has **changed since the last commit**.  Sometimes i
   ```
   $ git tag -a favorites -m "The full list of my favorite foods, classified by type"
   ```
-    - `-a` is telling git to **add** a tag
+    - `-a` is telling git to add a new tag (actually `a` stands for annotate, but close enough)
     - The single word after `-a` is the tag **name**: a short identifier for us to refer to later
     - The **message** after `-m` is the note you're leaving to yourself
 
