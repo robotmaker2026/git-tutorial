@@ -8,11 +8,11 @@ You will be using the terminal / command prompt for all of the `git` actions (as
 $ pwd
 ```
 
-You won't type the `$` character---it is usually provided to you by the terminal, but even if not we'll still use it as a placeholder to generically indicate the command prompt.  In this case, you would type the three letter command `pwd` and press the Enter key, and your terminal should respond with the full path to the folder you're in.
+You won't type the `$` character---it is usually provided to you by the terminal, but even if not we'll still use it as a placeholder to generically indicate the command prompt.  In this case, you would type the three letter command `pwd` then press the Enter key, and your terminal should respond with the full path to the folder you're in.
 
 With that, let's get started.
 
-However you usually do it on your computer, create a folder to hold all the different repos you'll create in this course (perhaps named `RobotMaker2026`).
+- However you usually do it on your computer, create a folder to hold all the different repos you'll create in this course (perhaps named `RobotMaker2026`).
 
 ### Getting started
 
@@ -38,7 +38,7 @@ It turns out we've already created an outline for a recipe.  Rather than startin
 - In the terminal, navigate back to the **parent directory** where you want this repo, i.e. `RobotMaker2026`
 - **Clone** the existing repo to make a brand new one with the exact same history:
   ```
-  $ git clone
+  $ git clone https://git.uclalemur.com/ubiss2026/my-recipe.git
   ```
 
 Hooray, you now have your own repo pre-populated with some files (and their history of commits).  Don't worry about the original owner anymore, it's all yours now.  You do not need any cloud service account to clone, and from this point on it lives offline, entirely on your own computer, as if you had done everything from the `git init` onwards yourself.
@@ -63,8 +63,7 @@ Regardless of how you created your `git` repo, the typical workflow from that po
 
 #### New content: `git add` / `git commit`
 
-- Use whatever text editing software you like to create a new plain text file in the `my
-recipe` folder named `ideas.md`.
+- Use whatever text editing software you like to create a new plain text file in the `my-recipe` folder named `ideas.md`.
     - **Do not** create a Word document, rich text format, pdf, or any other kind of file---ensure you save the file as "plain text".
     - The `.md` extension denotes a markdown file, which gives you intuitive formatting while still staying readable in plain text.
 
@@ -215,7 +214,7 @@ You deleted stuff in the past too, when you deleted the entire "drinks" section.
 
 Even though there were other changes made afterwards, that specific change nevertheless got undone.  In this case, the revert could be cleanly applied as a new commit; you can use `git log` / `git show` to see what has happened.
 
-#### Handling a conflict: `git merge`
+#### Handling a conflict
 
 Sometimes later commits edit the content in an earlier commit, in which case it's not clear how to undo the earlier commit.  `git` doesn't try to answer that question for you, instead forcing you to figure it out.
 
