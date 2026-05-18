@@ -1,5 +1,11 @@
 ## Advanced usage
 
+### Additional command options
+
+#### `git log`
+
+#### `git diff`
+
 ### Additional commands
 
 #### `git cherry-pick`
