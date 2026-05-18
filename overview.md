@@ -12,13 +12,13 @@ These two are basically what people mean when they call `git` a "distributed ver
 * Note 1: `git` only works on text files (which nonetheless does allow for a lot of non-text media such as SVG images, markdown based presentations, and more.)
 * Note 2: `git` is typeset in a fixed point font to indicate that it's a tool that you'll run locally on your own computer (as opposed to on someone else's server i.e. "in the cloud").
 
-#### What is github
+#### What is Github
 
 **Github** is an online multiplayer ecosystem ("cloud service") that helps with communication, coordination, sharing, and other features relevant for `git` users working together.  It also provides a few other tools to augment the core `git` functionality.
 
-Github is not `git`, and `git` is not github.  You may find occasions to use either indepently, or both in conjunction.
+Github is not `git`, and `git` is not Github.  You may find occasions to use either indepently, or both in conjunction.
 
-Most of this tutorial will focus on using `git` as a standalone tool, but there will be some sections on using the relevant collaborative elements of github.
+Most of this tutorial will focus on using `git` as a standalone tool, but there will be some sections on using the relevant collaborative elements of Github.
 
 ### Why to `git`
 
