@@ -19,7 +19,3 @@
 #### Fast-forward
 
 #### `.gitignore`
-
-#### fancier git logs
-
-#### git word diff
