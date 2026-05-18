@@ -8,7 +8,7 @@ You will be using the terminal / command prompt for all of the `git` actions (as
 $ pwd
 ```
 
-You won't type the `$` character---it is usually provided to you by the terminal, but even if not we'll still use it as a placeholder to generically indicate the command prompt.  In this case, you would type the three letter command `pwd` and press `<enter>`, and your terminal should respond with the full path to the folder you're in.
+You won't type the `$` character---it is usually provided to you by the terminal, but even if not we'll still use it as a placeholder to generically indicate the command prompt.  In this case, you would type the three letter command `pwd` and press the Enter key, and your terminal should respond with the full path to the folder you're in.
 
 With that, let's get started.
 
@@ -33,7 +33,7 @@ We'll handle content in the next section, but first let's look at other ways of 
 
 #### Building off of another repo: `git clone`
 
-It turns out we've already created an outline for a recipe.  Rather than starting from nothing, you can build on our repo that lives at <>.
+It turns out we've already created an outline for a recipe.  Rather than starting from nothing, you can build on our repo that lives at <https://git.uclalemur.com/ubiss2026/my-recipe>.
 
 - In the terminal, navigate back to the **parent directory** where you want this repo, i.e. `RobotMaker2026`
 - **Clone** the existing repo to make a brand new one with the exact same history:
@@ -51,7 +51,7 @@ Note 2: You could also have chosen any existing git repo to clone, even the loca
 
 If you want to be able to use the online Github services for yourself, instead of cloning directly from the original repo to your hard drive, **fork** the original repo into your Github account.
 
-- After logging in to your Github account on the website, navigate in your browser to <>
+- After logging in to your Github account on the website, navigate in your browser to <https://git.uclalemur.com/ubiss2026/my-recipe>
 
 - Click on the button in the top right of the screen labeled "Fork".  (It will also have an icon and a number counting the current forks.)
 
