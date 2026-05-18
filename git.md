@@ -49,9 +49,9 @@ Note 2: You could also have chosen any existing git repo to clone, even the loca
 
 #### Adding some cloud: forking
 
-If you want to be able to use the online github services for yourself, instead of cloning directly from the original repo to your hard drive, **fork** the original repo into your github account.
+If you want to be able to use the online Github services for yourself, instead of cloning directly from the original repo to your hard drive, **fork** the original repo into your Github account.
 
-- After logging in to your github account on the website, navigate in your browser to <>
+- After logging in to your Github account on the website, navigate in your browser to <>
 
 - Click on the button in the top right of the screen labeled "Fork".  (It will also have an icon and a number counting the current forks.)
 
@@ -221,7 +221,7 @@ Sometimes later commits edit the content in an earlier commit, in which case it'
 
 - Decide instead to delete the title altogether.  Save, add, commit.
 
-- Try to revert the change to the title that you made way long ago.  Find the commit hash with `git log`, verify with `git show`, then undo it with `git revert`.
+- Try to revert the change to the title that you made way long ago.  Find the commit hash with `git log`, verify with `git show`, then try to undo it with `git revert`.
 
     - You asked `git` to undo a change on text that no longer exists; `git` doesn't know what you intend, so it shows an error.
     - `git` will provide two options for what you might mean: the status of that section of text before the first commit that you're trying to revert, and the status of that section of test after the last commit that edited that section.  However, it will be up to you to identify what you actually want.
@@ -262,9 +262,9 @@ Note: You can `git reset` and `git restore` in a single command: `git reset --ha
 
 #### Single-player backup: `git push`
 
-Since you initially cloned this repository from your github account to your local drive, it might be nice to save your new commits back on your github account.
+Since you initially cloned this repository from your Github account to your local drive, it might be nice to save your new commits back on your Github account.
 
-- Send your new commits to github:
+- Send your new commits to Github:
   ```
   $ git push
   ```
@@ -279,18 +279,119 @@ You can use git to synchronize between multiple clones of the same repository.  
 $ git pull
 ```
 
-Note: this assumes that you only pulled, added, committed, and pushed on one clone at a time.  Otherwise, you're entering the realm of parallel changes, which we'll look at in the next section.
+Note: this assumes that you only add, commit, and push on one clone at a time.  Otherwise, you're entering the realm of parallel changes, which we'll look at in the next section.
 
 ### Trying things in parallel
 
-#### Creating a new option: `git branch`
+Now that your "ideas" document contains a list of your favorite foods, let's start making a recipe.  Pick the food you want to submit the recipe for.
+
+- Open `README.md` in a text editor and delete all the ingredients and steps for the example recipe, leaving the section headings in place.  Replace the title with the name of the food you'll be creating.  Save, add, and commit.
+
+- Edit `README.md` to include the list of ingredients for your food.  Save, add, and commit.
+
+#### Creating a new option: `git switch`
+
+Invent a simple modification to the default recipe by adding a single ingredient (perhaps garlic, cinnamon, chocolate, or cheese?).
+
+- Create a new branch to be explore that variant:
+  ```
+  $ git switch -c <branchname>
+  ```
+    - Replace `<branchname>` with a single (possibly hyphenated) word identifier for the variant, e.g. `plus-garlic` or `chocolatey`.
+    - `-c` is used to simultaneously create the branch and switch to it.
+
+- Edit `README.md` to add the extra ingredient to the ingredient list.  Save, add, commit.
 
 #### Going between options: `git switch`
 
+- Be sure to close the text editor to avoid confusing it.  The file itself will be directly modified by `git` behind the scenes.
+
+- Return to the original recipe in progress:
+  ```
+  $ git switch main
+  ```
+
+- Reopen `README.md`, and note that the additional ingredient is no longer in the list.  Add the instructions for the original recipe to the file.  Save, add, commit.
+
+- (optional) View your parallel realities using the git log, noting the fork in the lines between the named branches:
+  ```
+  $ git log --graph --abbrev-commit --branches --pretty=oneline
+  ```
+
 #### Bringing things together: `git merge`
+
+- Return to the variant you're exploring:
+  ```
+  $ git switch <branchname>
+  ```
+
+- View `README.md` (but close again afterwards); note that the additional ingredient is back on the list but the newly added instructions are gone.  This was the most recent state of the repo while you were on that branch before.
+
+- Incorporate the changes you made to the other branch in this one too:
+  ```
+  $ git merge main
+  ```
+    - In this case, the parallel changes didn't overlap / interfere.  Much like `git revert` though, you may end up with merge conflicts.  If so, you would resolve them in the same way.
+
+- Open `README.md` and add the additional instruction(s) where you use the new ingredient in the recipe.  Save, add, commit.
+
+- (optional) See the latest representation of your parallel variants using `git log`.
+
+#### (Optional) Choosing one: `git branch`
+
+- If you would like to uniquely settle on one of your branches, you can remove the other.  By convention, we will stick to `main` being the unique branch, so get back on that branch:
+  ```
+  $ git switch main
+  ```
+
+- If that is the recipe variant you want to stick with, you're set for now.  If you'd prefer the other variant though, incorporate all of those changes into the current branch:
+  ```
+  $ git merge <branchname>
+  ```
+
+- Get rid of (delete) the other branch:
+  ```
+  $ git branch -d <branchname>
+  ```
+
+Note 1: If you didn't merge those changes into main, `git` will refuse to delete (to protect you from yourself).  It will tell you how to override its refusal if you really mean to delete the other branch and lose its commits forever(*).
+
+(*) Note 2: Not actually, but that's a more advanced topic.
 
 ### More cloud things
 
-#### Being polite: merge / pull requests
+You've created your recipe, now it's time to edit our recipe book to include it.  You're going to work with us (within the Github ecosystem) to make that happen.
 
 #### Communication: issues
+
+Tell us that you'd like us to include your recipe in our book.
+
+- Navigate to our recipe book's Github page at <> and click the "Issues" tab (i.e. <>).
+
+- Click the big green button labeled "New issue".
+
+- In the description, explain in detail what you want us to consider (e.g. "Add a recipe for <food> in the category <category>")
+
+- Give a short descriptive title of the request (e.g. "Feature request: <food>")
+
+- Click the green "Create" button, then note the issue number of the newly created issue.
+
+#### Contributing: merge / pull requests
+
+(Politely) add your recipe to our book yourself.
+
+- Edit our recipe book to include your new recipe: `fork`, `clone`, `edit`, `add`, `commit`, `push` the recipe book repo from <https://git.uclalemur.com/ubiss2026/recipe-book> with the name of the food, the link to your recipe repository, and your name.
+
+- Navigate to your Github fork of our recipe-book repo on github.com, and click on the "Pull requests" tab.
+
+- Click the big green "New pull request" button.
+
+- Make sure the left-hand branch shows the original recipe-book repo (under the `RobotMaker2026` organization) and the right-hand branch shows the branch you modified in under your Github account.
+
+- Check the tabs for "<m> commit(s)" and "<n> file(s) changed" to ensure you're only making the minimal relevant number of changes.  If it all looks good, click the big green "Create pull request" button.
+
+- Give a brief title and a detailed descriptive comment of your proposed change.  In the description, refer to the issue number that you filed earlier requesting the change you're addressing by including the key phrase "Resolves #<issue number>".
+    - Use the issue number from the previous section; Github might help with relevant tooltips.
+    - There are other keywords that will all do the same thing; feel free to use a different one if it better describes what your change does: <https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/linking-a-pull-request-to-an-issue>
+
+- Click the big green "Create pull request" button.
