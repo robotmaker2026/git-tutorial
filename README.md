@@ -2,7 +2,7 @@
 
 Start here if don't know how to use `git` to make your life better.  This guide doesn't presume that you are a coder or engineer.
 
-It is divided into 4 sections; feel free to or start at the section that best meets your needs or skip around as necessary.
+It is divided into 4 sections; feel free to start at the section that best meets your needs or skip around as necessary.
 
 - [Overview](overview.md):
 
