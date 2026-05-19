@@ -43,7 +43,7 @@ It turns out we've already created an outline for a recipe.  Rather than startin
 
 Hooray, you now have your own repo pre-populated with some files (and their history of commits).  Don't worry about the original owner anymore, it's all yours now.  You do not need any cloud service account to clone, and from this point on it lives offline, entirely on your own computer, as if you had done everything from the `git init` onwards yourself.
 
-Note 1: The root of the new repo is now in the `my-recipe` subfolder of `RobotMaker2026`, though you can specify the root folder during the clone.  For the sake of the rest of this tutorial, delete or rename the folder you just made here, perhaps to `original-recipe`:
+Note 1: The root of the new repo is now in the `my-recipe` subfolder of `RobotMaker2026`, though you can specify an alternate name for the root folder during the clone.  For the sake of the rest of this tutorial, delete the folder you just made here, or perhaps rename (move) it to `original-recipe`:
 ```
 $ mv my-recipe original-recipe
 ```
