@@ -40,4 +40,4 @@ And when it's easier to recover from a mistake, you'll probably be less hesitant
 
 - **HEAD**: The most recent commit that you've been working from.
 
-- **Hash**: A long random string that identifies a commit.
+- **Hash**: A long random hexadecimal string that identifies a commit.
