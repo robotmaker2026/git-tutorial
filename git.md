@@ -58,7 +58,7 @@ If you want to be able to use the online Github services for yourself: instead o
 
 - Click on the button in the top right of the screen labeled "Fork".  (It will also have an icon and a number counting the current forks.)
 
-- After forking, you should be taken to an identical repository, only this time under your account instead of ours.  You can now clone this to your local drive.  Copy the URL from the big green button labeled "<> Code" and then repeat the previous section but with that new URL instead of ours.
+- After forking, you should be taken to an identical repository, only this time under your account instead of ours.  You can now clone this to your local drive.  Copy the URL from the big green button labeled "&lt;&gt; Code" and then repeat the previous section but with that new URL instead of ours.
 
 ### Main workflow
 
@@ -230,7 +230,7 @@ Sometimes later commits edit the content in an earlier commit, in which case it'
 
 - Open the file in the text editor to handle the conflict.  Find the conflicted section and the two options:
     - between "<<<<<< HEAD" and "======" is the latest state of that text section
-    - between "======" and ">>>>>> parent of <hash> (<message>)" is the state of that text section before the commit you're trying to revert
+    - between "======" and ">>>>>> parent of &lt;hash&gt; (&lt;message&gt;)" is the state of that text section before the commit you're trying to revert
 
 - Edit the text section to what you actually want: choose one of the two options, or replace the entire section with something else entirely.  In the end, ensure that you've deleted the "<<<<<<", "======", ">>>>>>" lines.
 
@@ -372,9 +372,9 @@ Tell us that you'd like us to include your recipe in our book.
 
 - Click the big green button labeled "New issue".
 
-- In the description, explain in detail what you want us to consider (e.g. "Add a recipe for <food> in the category <category>")
+- In the description, explain in detail what you want us to consider (e.g. "Add a recipe for &lt;food&gt; in the category &lt;category&gt;")
 
-- Give a short descriptive title of the request (e.g. "Feature request: <food>")
+- Give a short descriptive title of the request (e.g. "Feature request: &lt;food&gt;")
 
 - Click the green "Create" button, then note the issue number of the newly created issue.
 
@@ -390,9 +390,9 @@ Tell us that you'd like us to include your recipe in our book.
 
 - Make sure the left-hand branch shows the original recipe-book repo (under the `RobotMaker2026` organization) and the right-hand branch shows the branch you modified in under your Github account.
 
-- Check the tabs for "<m> commit(s)" and "<n> file(s) changed" to ensure you're only making the minimal relevant number of changes.  If it all looks good, click the big green "Create pull request" button.
+- Check the tabs for "&lt;m&gt; commit(s)" and "&lt;n&gt; file(s) changed" to ensure you're only making the minimal relevant number of changes.  If it all looks good, click the big green "Create pull request" button.
 
-- Give a brief title and a detailed descriptive comment of your proposed change.  In the description, refer to the issue number that you filed earlier requesting the change you're addressing by including the key phrase "Resolves #<issue number>".
+- Give a brief title and a detailed descriptive comment of your proposed change.  In the description, refer to the issue number that you filed earlier requesting the change you're addressing by including the key phrase "Resolves #&lt;issue number&gt;".
     - Use the issue number from the previous section; Github might help with relevant tooltips.
     - There are other keywords that will all do the same thing; feel free to use a different one if it better describes what your change does: <https://docs.github.com/en/issues/tracking-your-work-with-issues/using-issues/linking-a-pull-request-to-an-issue>
 
