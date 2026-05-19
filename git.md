@@ -52,7 +52,7 @@ Note 2: You can clone any existing git repo that you have access to, even the lo
 
 #### Adding some cloud: forking
 
-If you want to be able to use the online Github services for yourself: instead of cloning directly from the original repo to your hard drive, **fork** the original repo into your Github account and close that.
+If you want to be able to use the online Github services for yourself: instead of cloning directly from the original repo to your hard drive, **fork** the original repo into your Github account and clone that.
 
 - After logging in to your Github account on the website, navigate in your browser to <https://git.uclalemur.com/ubiss2026/my-recipe>
 
