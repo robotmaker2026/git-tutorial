@@ -43,22 +43,22 @@ It turns out we've already created an outline for a recipe.  Rather than startin
 
 Hooray, you now have your own repo pre-populated with some files (and their history of commits).  Don't worry about the original owner anymore, it's all yours now.  You do not need any cloud service account to clone, and from this point on it lives offline, entirely on your own computer, as if you had done everything from the `git init` onwards yourself.
 
-Note 1: The root of the new repo is now in the `my-recipe` subfolder of `RobotMaker2026`, though you can specify an alternate name for the root folder during the clone.  For the sake of the rest of this tutorial, delete the folder you just made here, or perhaps rename (move) it to `original-recipe`:
+Note 1: The root of the new repo is now in the `my-recipe` subfolder of `RobotMaker2026`, though you're able to specify an alternate name for the root folder during the clone.  For the sake of the rest of this tutorial, delete the folder you just made here, or perhaps rename (move) it to `original-recipe`:
 ```
 $ mv my-recipe original-recipe
 ```
 
-Note 2: You could also have chosen any existing git repo to clone, even the local repository created in the previous step.  Typically you will clone repos from online links though.
+Note 2: You can clone any existing git repo that you have access to, even the local repository created in the previous step.  Typically you will clone repos from online links though.
 
 #### Adding some cloud: forking
 
-If you want to be able to use the online Github services for yourself, instead of cloning directly from the original repo to your hard drive, **fork** the original repo into your Github account.
+If you want to be able to use the online Github services for yourself: instead of cloning directly from the original repo to your hard drive, **fork** the original repo into your Github account and close that.
 
 - After logging in to your Github account on the website, navigate in your browser to <https://git.uclalemur.com/ubiss2026/my-recipe>
 
 - Click on the button in the top right of the screen labeled "Fork".  (It will also have an icon and a number counting the current forks.)
 
-- After forking, you should be taken to an identical repository, only this time under your account instead of ours.  You can clone this to your local drive instead.  Copy the URL from the big green button labeled "<> Code" and then repeat the previous section but with that new URL instead of ours.
+- After forking, you should be taken to an identical repository, only this time under your account instead of ours.  You can now clone this to your local drive.  Copy the URL from the big green button labeled "<> Code" and then repeat the previous section but with that new URL instead of ours.
 
 ### Main workflow
 
