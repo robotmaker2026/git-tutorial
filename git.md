@@ -33,12 +33,12 @@ We'll handle content in the next section, but first let's look at other ways of 
 
 #### Building off of another repo: `git clone`
 
-It turns out we've already created an outline for a recipe.  Rather than starting from nothing, you can build on our repo that lives at <https://git.uclalemur.com/ubiss2026/my-recipe>.
+It turns out we've already created an outline for a recipe.  Rather than starting from nothing, you can build on our repo that lives at <https://github.com/robotmaker2026/my-recipe>.
 
 - In the terminal, navigate back to the **parent directory** where you want this repo, i.e. `RobotMaker2026`
 - **Clone** the existing repo to make a brand new one with the exact same history:
   ```
-  $ git clone https://git.uclalemur.com/ubiss2026/my-recipe.git
+  $ git clone https://github.com/robotmaker2026/my-recipe.git
   ```
 
 Hooray, you now have your own repo pre-populated with some files (and their history of commits).  Don't worry about the original owner anymore, it's all yours now.  You do not need any cloud service account to clone, and from this point on it lives offline, entirely on your own computer, as if you had done everything from the `git init` onwards yourself.
@@ -54,7 +54,7 @@ Note 2: You can clone any existing git repo that you have access to, even the lo
 
 If you want to be able to use the online Github services for yourself: instead of cloning directly from the original repo to your hard drive, **fork** the original repo into your Github account and clone that.
 
-- After logging in to your Github account on the website, navigate in your browser to <https://git.uclalemur.com/ubiss2026/my-recipe>
+- After logging in to your Github account on the website, navigate in your browser to <https://github.com/robotmaker2026/my-recipe>
 
 - Click on the button in the top right of the screen labeled "Fork".  (It will also have an icon and a number counting the current forks.)
 
@@ -383,7 +383,7 @@ Tell us that you'd like us to include your recipe in our book.
 
 (Politely) add your recipe to our book yourself.
 
-- Edit our recipe book to include your new recipe: `fork`, `clone`, `edit`, `add`, `commit`, `push` the recipe book repo from <https://git.uclalemur.com/ubiss2026/recipe-book> with the name of the food, the link to your recipe repository, and your name.
+- Edit our recipe book to include your new recipe: fork, `clone`, `edit`, `add`, `commit`, `push` the recipe book repo from <https://github.com/robotmaker2026/recipe-book> with the name of the food, the link to your recipe repository, and your name.  Feel free to add to an existing category or make a new one as you see fit.
 
 - Navigate to your Github fork of our recipe-book repo on github.com, and click on the "Pull requests" tab.
 
