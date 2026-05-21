@@ -192,9 +192,9 @@ Hooray, disaster has been averted!
   ```
   $ git log
   ```
-- There are many options to format the log detailed in the [advanced](advanced.md) notes; one generic way to condense the output but add additional branch information:
+- There are additional options to format the log detailed in the [advanced](advanced.md) notes; one generic way to condense the output and add visual branch representation:
   ```
-  $ git log --graph --abbrev-commit --branches --pretty=oneline
+  $ git log --graph --oneline
   ```
 
 #### Fixing a past mistake: `git show` / `git revert`
