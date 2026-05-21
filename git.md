@@ -84,7 +84,7 @@ Regardless of how you created your `git` repo, the typical workflow from that po
 
 - Create a commit with a helpful message indicating what has changed:
   ```
-  $ git commit -m "Created initial blank document"
+  $ git commit -m "Created initial blank document for food ideas"
   ```
 
 Your repo is now doing something for you!  It is tracking a file, which so far has a history of one commit.  Let's do more with that file in the next section.
@@ -93,7 +93,7 @@ Your repo is now doing something for you!  It is tracking a file, which so far h
 
 - Open your `ideas.md` file in your text editor
 
-- Add several ideas for recipes, by listing out all the foods you like---one per line, each preceeded by a dash `-`, e.g.:
+- Add several ideas for recipes by listing out all the foods you like---one per line, each preceeded by a dash `-`, e.g.:
   ```
   - Cereal
   - Fried eggs
@@ -166,15 +166,15 @@ To show off the value of `git` when it comes to undoing mistakes, let's create s
 
 #### Seeing what has changed: `git diff`
 
-After all that effort to list all your favorite foods, you just deleted a bunch of them!  What a waste of effort, let's try to get them back.
+After all that effort to list all your favorite foods, you just deleted a bunch of them!  What a waste of effort... let's try to get them back.
 
-- (optional) Try re-opening the file and undo-ing that last delete.  You (probably) can't.
+- (optional) Try re-opening the file and undo-ing that last delete from within your text editor.  You (probably) can't.
 - See what is different between the last commit and your current working state:
   ```
   $ git diff
   ```
     - Note that by default you only see the difference between the last commit (i.e. HEAD) and the current working state, so after you've added and committed, the diff will be blank.
-    - There are many more things you can do with `git diff` which we will save for advanced `git`.
+    - There are some formatting options available with `git diff` described in the [advanced](advanced.md) notes.
 
 #### Fixing a current mistake: `git restore`
 
@@ -182,6 +182,7 @@ After all that effort to list all your favorite foods, you just deleted a bunch 
   ```
   $ git restore ideas.md
   ```
+- You can check the contents of the file and `git status` to see that the deleted text has been restored.
 
 Hooray, disaster has been averted!
 
@@ -191,7 +192,7 @@ Hooray, disaster has been averted!
   ```
   $ git log
   ```
-- There are many options to format the log; one quick way to condense the output a bit:
+- There are many options to format the log detailed in the [advanced](advanced.md) notes; one generic way to condense the output but add additional branch information:
   ```
   $ git log --graph --abbrev-commit --branches --pretty=oneline
   ```
