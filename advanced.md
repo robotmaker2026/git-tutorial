@@ -93,3 +93,14 @@ You can try to do this even if you have made some changes, and it will probably 
 ### Git configuration and utilities
 
 #### `.gitignore`
+
+When you run a `git status`, it will also point out files that exist in your folder that you haven't added to git.  There are often files that you will never want to include in the repo (i.e. `.DS_Store` files from a Mac, auto-generated backup files, compiled outputs, etc.).  You can use a file called `.gitignore` in the repo root to tell `git` to skip over some files when showing you the state of the repo.
+
+There is a syntax and you can create the `.gitignore` yourself, but it's a lot easier to find a readymade one, e.g. from <https://github.com/github/gitignore>.  Find the file that matches your repo's project (or combine multiple by just copy/pasting from one into the other) and save it as `.gitignore` in your root directory, then `add` and `commit` it.  You should no longer see the relevant items under "Untracked files" in `git status`.
+
+#### `.gitkeep`
+
+You can only `add` and `commit` **files** to `git`, not directories (but `git` will make the relevant subdirectories if you have commits referencing files under them).  If you find that you want to have an empty directory indexed by `git`, create an empty file named `.gitkeep` in that directory, then `add` and `commit` it.  You can create that empty file from the command line with:
+```
+$ touch .gitkeep
+```
