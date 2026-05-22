@@ -56,3 +56,63 @@ Any of these settings can be overridden within a specific repository by running 
 ```
 $ git config user.email "myemail+thisproject@example.com"
 ```
+
+
+--- 
+### GitHub SSH Setup
+
+To use GitHub from the command line, configure an **SSH key**. This lets GitHub authenticate you when you clone, pull, or push using SSH without needing to type your password every time.
+
+#### 1. Check for existing SSH keys
+Open your terminal and check if you already have an SSH key:
+
+- **Windows (PowerShell)**, **macOS**, or **Linux**:
+  ```bash
+  ls ~/.ssh
+  ```
+
+If you see files like `id_ed25519.pub` or `id_rsa.pub`, you already have a key.
+
+#### 2. Generate a new SSH key
+If you don't have one, run this command (replace `<your email>` with your actual GitHub email):
+
+```bash
+ssh-keygen -t ed25519 -C "<your email>"
+```
+
+- Press **Enter** to accept the default file location.
+- (Optional) Enter a passphrase for extra security, or press **Enter** twice to leave it blank.
+
+#### 3. Copy the SSH public key
+You need to copy the contents of your **public** key file (`id_ed25519.pub`) to your clipboard.
+
+- **Windows (PowerShell)**:
+  ```powershell
+  Get-Content ~/.ssh/id_ed25519.pub | Set-Clipboard
+  ```
+- **macOS**:
+  ```bash
+  pbcopy < ~/.ssh/id_ed25519.pub
+  ```
+- **Linux**:
+  ```bash
+  cat ~/.ssh/id_ed25519.pub
+  ```
+  *(Then manually select and copy the output)*
+
+#### 4. Add the key to your GitHub account
+1. Go to [GitHub Settings](https://github.com/settings/keys).
+2. Click **New SSH key**.
+3. Give it a title (e.g., "My Laptop").
+4. Paste your key into the **Key** field.
+5. Click **Add SSH key**.
+
+#### 5. Test the connection
+Verify that everything is set up correctly:
+
+```bash
+ssh -T git@github.com
+```
+
+If successful, you'll see: `Hi <username>! You've successfully authenticated, but GitHub does not provide shell access.
+.`
