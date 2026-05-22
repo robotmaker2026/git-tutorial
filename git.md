@@ -58,7 +58,7 @@ If you want to be able to use the online Github services for yourself: instead o
 
 - Click on the button in the top right of the screen labeled "Fork".  (It will also have an icon and a number counting the current forks.)
 
-- After forking, you should be taken to an identical repository, only this time under your account instead of ours.  You can now clone this to your local drive.  Copy the URL from the big green button labeled "&lt;&gt; Code" and then repeat the previous section but with that new URL instead of ours.
+- After forking, you should be taken to an identical repository, only this time under your account instead of ours.  You can now clone this to your local drive.  Copy the URL from the big green button labeled "&lt;&gt; Code" (note, the URL should be under the "SSH" tab, and will start `git@github.com:...`) then repeat the previous section but with that new URL instead of ours.
 
 ### Main workflow
 
