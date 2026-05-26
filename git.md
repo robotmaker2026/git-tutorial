@@ -369,7 +369,7 @@ You've created your recipe, now it's time to edit our recipe book to include it.
 
 Tell us that you'd like us to include your recipe in our book.
 
-- Navigate to our recipe book's Github page at <> and click the "Issues" tab (i.e. <>).
+- Navigate to our recipe book's Github page at <https://github.com/robotmaker2026/recipe-book> and click the "Issues" tab (i.e. <https://github.com/robotmaker2026/recipe-book/issues>).
 
 - Click the big green button labeled "New issue".
 
